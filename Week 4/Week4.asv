@@ -1,0 +1,22 @@
+% Gaussian distribution equation properties
+
+clc;
+
+mu = 0;
+sigma = 1;
+Fs = 22000;
+Duration = 2;
+x = randn(Fs*Duration,1);
+pdf = (1/sqrt(2*pi*sigma)) * exp(-((x - mu).^2) / (2*sigma^2));
+
+
+figure;
+plot(x, pdf, 'LineWidth', 2);
+grid on;
+
+title('Normal (Guassian) Distribution');
+xlabel('x');
+ylabel('P(x)');
+
+% Random Number Generator
+noise = randn (6,1);
